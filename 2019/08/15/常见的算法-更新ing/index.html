@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/mymelodrama.github.io/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/mymelodrama.github.io/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/mymelodrama.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/mymelodrama.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/mymelodrama.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/mymelodrama.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/mymelodrama.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/mymelodrama.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/mymelodrama.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="leetcode练习题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见的算法(更新ing)">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;mymelodrama&#x2F;mymelodrama.github.io&#x2F;2019&#x2F;08&#x2F;15&#x2F;%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95-%E6%9B%B4%E6%96%B0ing&#x2F;index.html">
+<meta property="og:site_name" content="仰望星空，低头赶路">
+<meta property="og:description" content="leetcode练习题">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-20T13:45:13.396Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/mymelodrama.github.io/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/mymelodrama/mymelodrama.github.io/2019/08/15/常见的算法-更新ing/"/>
+
+
+
+
+
+  <title>常见的算法(更新ing) | 仰望星空，低头赶路</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/mymelodrama.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">仰望星空，低头赶路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/mymelodrama.github.io/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/mymelodrama.github.io/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/mymelodrama.github.io/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/mymelodrama/mymelodrama.github.io/mymelodrama.github.io/2019/08/15/%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95-%E6%9B%B4%E6%96%B0ing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="无糖可乐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/mymelodrama.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="仰望星空，低头赶路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常见的算法(更新ing)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-15T00:03:12+08:00">
+                2019-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>leetcode练习题</p>
+<a id="more"></a>
+
+
+
+<h1 id="1-最长回文子串"><a href="#1-最长回文子串" class="headerlink" title="1.最长回文子串"></a>1.最长回文子串</h1><p>​    <strong>给定一个字符串 s，找到 s 中最长的回文子串。</strong></p>
+<h2 id="算法一：寻找最长公共子串"><a href="#算法一：寻找最长公共子串" class="headerlink" title="算法一：寻找最长公共子串"></a>算法一：寻找最长公共子串</h2><p>​    反转字符串 S*，使之变成S′。找到 S 和 S′ 之间最长的公共子串，这也必然是最长的回文子串。</p>
+<p>似乎方法可行，例如S=“1221abc”   S′=“cba1221”  S∩S′=“1221” 最长回文子串为“1221”。 </p>
+<p>不过当这个例子： S=“abacdfgdcaba”,  S′=“abacdgfdcaba”  S∩S′=“abacd”，显然，这甚至不是回文串。</p>
+<p>所以在搜寻基础上加入判断是否为回文串就是必须的。</p>
+<p>贴上c++</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length()==<span class="number">1</span>) <span class="keyword">return</span> s;<span class="comment">//大小为1的字符串必为回文串</span></span><br><span class="line">        <span class="built_in">string</span> rev=s;<span class="comment">//rev存放s反转结果</span></span><br><span class="line">        <span class="built_in">string</span> res;<span class="comment">//存放结果</span></span><br><span class="line">        <span class="built_in">std</span>::reverse(rev.<span class="built_in">begin</span>(),rev.<span class="built_in">end</span>()); <span class="comment">//反转操作</span></span><br><span class="line">        <span class="keyword">if</span>(rev==s) <span class="keyword">return</span> s;  <span class="comment">//如果s本身就是回文的情况</span></span><br><span class="line">        <span class="keyword">int</span> len=<span class="number">0</span>;<span class="comment">//存放回文子串的长度</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)<span class="comment">//查找s与rev的最长公共子串</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> temp;<span class="comment">//存放待验证子串</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;s.length();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                temp=temp+s[j];</span><br><span class="line">                <span class="keyword">if</span>(len&gt;=temp.length())  <span class="comment">//继续查找</span></span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(rev.<span class="built_in">find</span>(temp)!=<span class="number">-1</span>)<span class="comment">//在rev中找到temp</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">string</span> q=temp;<span class="comment">//q用来验证temp是否是回文子串</span></span><br><span class="line">                    <span class="built_in">std</span>::reverse(q.<span class="built_in">begin</span>(),q.<span class="built_in">end</span>());</span><br><span class="line">                    <span class="keyword">if</span>(q==temp)</span><br><span class="line">                    &#123;</span><br><span class="line">                        len=temp.length();</span><br><span class="line">                        res=temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;  <span class="comment">//其他情况退出</span></span><br><span class="line">            &#125;</span><br><span class="line">            temp=<span class="string">""</span>;   <span class="comment">//初始化验证子串，方便下次循环的验证</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法二：暴力查找"><a href="#算法二：暴力查找" class="headerlink" title="算法二：暴力查找"></a>算法二：暴力查找</h2><p>​    穷举出所有的子字符串，判断是否为回文串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindromic</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> len = s.length();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len / <span class="number">2</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (s.charAt(i) != s.charAt(len - i - <span class="number">1</span>)) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 暴力解法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    String ans = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> len = s.length();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= len; j++) &#123;</span><br><span class="line">            String test = s.substring(i, j);</span><br><span class="line">            <span class="keyword">if</span> (isPalindromic(test) &amp;&amp; test.length() &gt; max) &#123;</span><br><span class="line">                ans = s.substring(i, j);</span><br><span class="line">                max = Math.max(max, ans.length());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法三：扩展中心"><a href="#算法三：扩展中心" class="headerlink" title="算法三：扩展中心"></a>算法三：扩展中心</h2><p>​    由于回文串是中心对称    ，每次循环选择一个中心，进行左右扩展，判断左右字符是否相等即可。由于存在奇数的字符串和偶数的字符串，所以我们需要从一个字符开始扩展，或者从两个字符之间开始扩展，所以总共有 n+n-1 个中心。（奇数有n种中心，偶数有n-1种中心）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() &lt; <span class="number">1</span>) </span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">int</span> start = <span class="number">0</span>, end = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = expandAroundCenter(s, i, i);  <span class="comment">//返回奇数的情况的长度</span></span><br><span class="line">        <span class="keyword">int</span> len2 = expandAroundCenter(s, i, i + <span class="number">1</span>);  <span class="comment">//返回偶数的情况的长度</span></span><br><span class="line">        <span class="keyword">int</span> len = Math.max(len1, len2);  <span class="comment">//比较出当前最大的情况的长度</span></span><br><span class="line">        <span class="keyword">if</span> (len &gt; end - start)</span><br><span class="line">        &#123;</span><br><span class="line">            start = i - (len - <span class="number">1</span>) / <span class="number">2</span>;  <span class="comment">//子串的开始指针位置</span></span><br><span class="line">            end = i + len / <span class="number">2</span>;   <span class="comment">//子串的结束指针位置</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start, end + <span class="number">1</span>);   <span class="comment">//返回子串</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">expandAroundCenter</span><span class="params">(String s, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span>  <span class="comment">//寻找子回文串的长度</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = left, R = right;</span><br><span class="line">    <span class="keyword">while</span> (L &gt;= <span class="number">0</span> &amp;&amp; R &lt; s.length() &amp;&amp; s.charAt(L) == s.charAt(R)) </span><br><span class="line">    &#123;</span><br><span class="line">        L--;</span><br><span class="line">        R++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> R - L - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="2-只出现一次的数"><a href="#2-只出现一次的数" class="headerlink" title="2.只出现一次的数"></a>2.只出现一次的数</h1><p>​    <strong>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</strong></p>
+<p>如[2,2,1]  输出1</p>
+<p>[4,1,2,1,2] 输出4</p>
+<h2 id="算法一：穷举法"><a href="#算法一：穷举法" class="headerlink" title="算法一：穷举法"></a>算法一：穷举法</h2><p>时间复杂度o(n^2)</p>
+<p>过于复杂，不建议使用。</p>
+<h2 id="算法二：简单的数学异或运算"><a href="#算法二：简单的数学异或运算" class="headerlink" title="算法二：简单的数学异或运算"></a>算法二：简单的数学异或运算</h2><p>1.a^b^c==a^c^b(交换律)</p>
+<p>2.n(任意数)^0==n</p>
+<p>3.n^n==0。</p>
+<p>由上面三条定律只需将0分别和数组中的所有元素异或即可得到只出现一次的数字</p>
+<p>java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            flag=flag^nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="3-只出现一次的数-改"><a href="#3-只出现一次的数-改" class="headerlink" title="3.只出现一次的数(改)"></a>3.只出现一次的数(改)</h1><p>​    <strong>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了多次。找出那个只出现了一次的元素。</strong></p>
+<h2 id="算法一：还是穷举暴力"><a href="#算法一：还是穷举暴力" class="headerlink" title="算法一：还是穷举暴力"></a>算法一：还是穷举暴力</h2><p>​    很简单直接遍历搜寻只出现一次的数就好了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Integer <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[i] == nums[j]) &#123;</span><br><span class="line">				flag++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> nums[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度o(n^2),运算174ms，emmmm</p>
+<h2 id="算法二：哈希图法"><a href="#算法二：哈希图法" class="headerlink" title="算法二：哈希图法"></a>算法二：哈希图法</h2><p>利用hashmap这种数据结构hashmap&lt;k,v&gt; k为键——数组中的某一数值，v为值——数组中某一值出现的次数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SolutionII</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; hashMap =<span class="keyword">new</span> HashMap();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (hashMap.containsKey(nums[i]))</span><br><span class="line">            &#123;</span><br><span class="line">                hashMap.put(nums[i],hashMap.get(nums[i])+<span class="number">1</span>);</span><br><span class="line">                <span class="comment">//数字多次出现时，覆盖原来的键，令其次数+1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(nums[i],<span class="number">1</span>); <span class="comment">//数字第一次出现时</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span> (Integer key : hashMap.keySet()) <span class="comment">//遍历哈希图</span></span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> (hashMap.get(key)==<span class="number">1</span>)</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">return</span> key;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="4-栈实现树的遍历"><a href="#4-栈实现树的遍历" class="headerlink" title="4.栈实现树的遍历"></a>4.栈实现树的遍历</h1><h2 id="前序遍历："><a href="#前序遍历：" class="headerlink" title="前序遍历："></a>前序遍历：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SolutionII</span>  //前序遍历</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function">List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root!=<span class="keyword">null</span>)   <span class="comment">//根节点不为空时候</span></span><br><span class="line">        &#123;</span><br><span class="line">            Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">            List&lt;Integer&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            <span class="comment">//装载要返回的前序遍历的节点表</span></span><br><span class="line">            TreeNode node = root;</span><br><span class="line">            stack.push(node);  <span class="comment">//首先将跟节点压栈</span></span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty())</span><br><span class="line">            &#123;</span><br><span class="line">                node=stack.pop();   <span class="comment">//指针指向出栈的节点</span></span><br><span class="line">                list.add(node.val);</span><br><span class="line">                <span class="keyword">if</span> (node.right!=<span class="keyword">null</span>)   <span class="comment">//先存右子数</span></span><br><span class="line">                &#123;</span><br><span class="line">                    stack.push(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (node.left!=<span class="keyword">null</span>)  <span class="comment">//再存左子树</span></span><br><span class="line">                &#123;</span><br><span class="line">                    stack.push(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">throw</span>  <span class="keyword">new</span> IllegalArgumentException(<span class="string">"eroor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="中序遍历："><a href="#中序遍历：" class="headerlink" title="中序遍历："></a>中序遍历：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123; <span class="comment">//中序遍历</span></span><br><span class="line">    <span class="function">List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Stack&lt;TreeNode&gt; treeNodeStack =<span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        List&lt;Integer&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();   <span class="comment">//装载要返回的中序遍历的节点表</span></span><br><span class="line">        TreeNode Node=root; <span class="comment">//指针</span></span><br><span class="line">        <span class="keyword">while</span> (root!=<span class="keyword">null</span> || !treeNodeStack.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (Node!=<span class="keyword">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                treeNodeStack.push(Node);</span><br><span class="line">                Node=Node.left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                Node=treeNodeStack.pop();</span><br><span class="line">                list.add(Node.val);</span><br><span class="line">                Node=Node.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="后序遍历："><a href="#后序遍历：" class="headerlink" title="后序遍历："></a>后序遍历：</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/mymelodrama.github.io/2019/07/29/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%8A%98%E8%85%BE%E8%AE%B0/" rel="next" title="个人博客折腾记">
+                <i class="fa fa-chevron-left"></i> 个人博客折腾记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/mymelodrama.github.io/2019/09/05/sql%E6%B3%A8%E5%85%A5%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="prev" title="sql注入学习之路">
+                sql注入学习之路 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">无糖可乐</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/mymelodrama.github.io/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-最长回文子串"><span class="nav-number">1.</span> <span class="nav-text">1.最长回文子串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法一：寻找最长公共子串"><span class="nav-number">1.1.</span> <span class="nav-text">算法一：寻找最长公共子串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法二：暴力查找"><span class="nav-number">1.2.</span> <span class="nav-text">算法二：暴力查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法三：扩展中心"><span class="nav-number">1.3.</span> <span class="nav-text">算法三：扩展中心</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-只出现一次的数"><span class="nav-number">2.</span> <span class="nav-text">2.只出现一次的数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法一：穷举法"><span class="nav-number">2.1.</span> <span class="nav-text">算法一：穷举法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法二：简单的数学异或运算"><span class="nav-number">2.2.</span> <span class="nav-text">算法二：简单的数学异或运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-只出现一次的数-改"><span class="nav-number">3.</span> <span class="nav-text">3.只出现一次的数(改)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法一：还是穷举暴力"><span class="nav-number">3.1.</span> <span class="nav-text">算法一：还是穷举暴力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法二：哈希图法"><span class="nav-number">3.2.</span> <span class="nav-text">算法二：哈希图法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-栈实现树的遍历"><span class="nav-number">4.</span> <span class="nav-text">4.栈实现树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前序遍历："><span class="nav-number">4.1.</span> <span class="nav-text">前序遍历：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中序遍历："><span class="nav-number">4.2.</span> <span class="nav-text">中序遍历：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后序遍历："><span class="nav-number">4.3.</span> <span class="nav-text">后序遍历：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">无糖可乐</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/mymelodrama.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mymelodrama.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mymelodrama.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mymelodrama.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mymelodrama.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mymelodrama.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/mymelodrama.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/mymelodrama.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/mymelodrama.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/mymelodrama.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/mymelodrama.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
