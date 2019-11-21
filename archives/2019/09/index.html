@@ -14,13 +14,6 @@
 
 
 
-  
-  
-    
-    
-  <script src="/mymelodrama.github.io/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/mymelodrama.github.io/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
 
 
 
@@ -63,7 +56,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/mymelodrama.github.io/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/mymelodrama.github.io/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/mymelodrama.github.io/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/mymelodrama.github.io/images/favicon-16x16-next.png?v=5.1.4">
@@ -75,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Lyx’s harbor" />
 
 
 
@@ -101,7 +94,7 @@
     root: '/mymelodrama.github.io/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -151,7 +144,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -183,31 +176,41 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/mymelodrama.github.io/%20" rel="section">
+          <a href="/mymelodrama.github.io/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/mymelodrama.github.io/about/%20" rel="section">
+        <li class="menu-item menu-item-archives">
+          <a href="/mymelodrama.github.io/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            关于
+            归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/mymelodrama.github.io/archives/%20" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/mymelodrama.github.io/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            归档
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/mymelodrama.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -330,6 +333,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/mymelodrama.github.io/images/5.JPG"
+                alt="无糖可乐" />
+            
               <p class="site-author-name" itemprop="name">无糖可乐</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -339,7 +346,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/mymelodrama.github.io/archives/%20%7C%7C%20archive">
+                <a href="/mymelodrama.github.io/archives/">
               
                   <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
@@ -347,6 +354,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/mymelodrama.github.io/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -356,7 +372,7 @@
           
 
           
-
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=481876029&auto=1&height=66"></iframe>
           
           
 
@@ -447,6 +463,8 @@
   
 
 
+  
+
 
 
 
@@ -485,6 +503,11 @@
   
   
     <script type="text/javascript" src="/mymelodrama.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mymelodrama.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
