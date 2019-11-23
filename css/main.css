@@ -1057,24 +1057,20 @@ pre .javascript .function {
   margin: 10px;
 }
 .back-to-top {
-  box-sizing: border-box;
-  position: fixed;
-  bottom: -100px;
-  right: 30px;
-  z-index: 1050;
-  padding: 0 6px;
-  width: 24px;
-  background: #222;
+  display: none;
+  margin: 20px -10px -20px;
+  background: #fff;
   font-size: 12px;
   opacity: 1;
-  color: #fff;
   cursor: pointer;
   text-align: center;
   -webkit-transform: translateZ(0);
-  transition-property: bottom;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
+}
+.back-to-top:hover {
+  opacity: 0.8;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .back-to-top {
@@ -1087,7 +1083,7 @@ pre .javascript .function {
   }
 }
 .back-to-top.back-to-top-on {
-  bottom: 19px;
+  display: block;
 }
 .header {
   background: transparent;
@@ -1112,12 +1108,12 @@ pre .javascript .function {
   position: relative;
   display: inline-block;
   padding: 0 40px;
-  color: #222;
+  color: #ffdead;
   background: #222;
   border-bottom: none;
 }
 .brand:hover {
-  color: #222;
+  color: #ffdead;
 }
 .logo {
   display: inline-block;
@@ -1201,13 +1197,14 @@ pre .javascript .function {
 }
 .menu .menu-item a {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
+  color: #ffdead;
 }
 .menu .menu-item a:hover {
   border-bottom-color: #222;
@@ -1225,6 +1222,19 @@ pre .javascript .function {
   .post-body {
     word-break: break-word;
   }
+}
+.post-body a {
+  color: #f8f5d4;
+  font-weight: bold;
+}
+.category-all-title {
+  color: #f8f5d4;
+}
+.category-list-count {
+  color: #f8f5d4;
+}
+.category {
+  color: #ffdead;
 }
 .post-body .fancybox img {
   display: block !important;
@@ -1345,6 +1355,12 @@ pre .javascript .function {
     text-align: left;
   }
 }
+.archive-page-counter {
+  color: #ffdead;
+}
+span {
+  color: #ffdead;
+}
 .posts-collapse {
   position: relative;
   z-index: 1010;
@@ -1399,7 +1415,7 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: border;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed #ffdead;
 }
 .posts-collapse .post-header::before {
   content: " ";
@@ -1409,7 +1425,7 @@ pre .javascript .function {
   width: 6px;
   height: 6px;
   margin-left: -4px;
-  background: #bbb;
+  background: #ffdead;
   border-radius: 50%;
   border: 1px solid #fff;
   transition-duration: 0.2s;
@@ -1428,6 +1444,7 @@ pre .javascript .function {
   font-size: 12px;
   left: 20px;
   top: 5px;
+  color: #ffdead;
 }
 .posts-collapse .post-comments-count {
   display: none;
@@ -1460,7 +1477,7 @@ pre .javascript .function {
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
-  color: #555;
+  color: #ffdead;
   border-bottom: none;
   line-height: 1.2;
   vertical-align: top;
@@ -1496,10 +1513,13 @@ pre .javascript .function {
 }
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
-  color: #999;
+  color: #000;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
+}
+.posts-expand .post-meta span {
+  color: #ffdead;
 }
 .posts-expand .post-meta .post-category-list {
   display: inline-block;
@@ -1547,6 +1567,9 @@ pre .javascript .function {
 .post-button {
   margin-top: 40px;
 }
+.btn {
+  color: #ffdead;
+}
 .posts-expand .post-tags {
   margin-top: 40px;
   text-align: center;
@@ -1579,6 +1602,7 @@ pre .javascript .function {
   font-size: 14px;
   color: #555;
   border-bottom: none;
+  color: #ffdead;
 }
 .post-nav-item a:hover {
   color: #222;
@@ -1748,6 +1772,10 @@ pre .javascript .function {
   color: #f5f5f5;
   font-weight: normal;
 }
+.back-to-top.back-to-top-on {
+  background: #80466f;
+  color: #ffdead;
+}
 .site-description {
   margin-top: 5px;
   text-align: center;
@@ -1822,7 +1850,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6eda2f;
+  background: #266aff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1945,6 +1973,7 @@ pre .javascript .function {
 .footer {
   font-size: 14px;
   color: #999;
+  background: rgba(0,0,0,0.3) none repeat scroll !important;
 }
 .footer img {
   border: none;
@@ -1956,9 +1985,13 @@ pre .javascript .function {
   display: inline-block;
   margin: 0 5px;
 }
+.post-meta-divider {
+  display: none;
+}
 .powered-by,
 .theme-info {
-  display: inline-block;
+  display: none;
+  color: #ffdead;
 }
 .cc-license {
   margin-top: 10px;
@@ -2592,9 +2625,11 @@ h4,
 h5,
 h6 {
   margin: 20px 0 10px;
+  color: #ffdead;
 }
 p {
   margin: 0 0 25px 0;
+  color: #ffdead;
 }
 a {
   border-bottom-color: #ccc;
@@ -2607,7 +2642,7 @@ hr {
   margin-top: 80px;
 }
 .header {
-  background: #f5f5f5;
+  background: rgba(199,144,213,0.3);
 }
 .header-inner {
   padding: 25px 0 20px;
@@ -2908,18 +2943,29 @@ hr {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 25px;
-  background: rgba(255,255,255,0.3) none repeat scroll !important;
+  background: rgba(255,255,255,0.2) none repeat scroll !important;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .content {
   border-radius: 10px;
   margin-top: 60px;
-  background: rgba(255,255,255,0.3) none repeat scroll !important;
+  background: rgba(255,255,255,0) none repeat scroll !important;
 }
 body {
-  background: url("http://q0jw8panu.bkt.clouddn.com/background.jpg");
+  background: url("http://q0jw8panu.bkt.clouddn.com/to%20the%20moon%201.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+.footer-inner {
+  color: #ffdead;
+}
+#sidebar p,
+#sidebar span,
+#sidebar a {
+  color: #ffdead;
+}
+article p {
+  color: #ffdead;
 }
