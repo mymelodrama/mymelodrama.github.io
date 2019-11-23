@@ -1243,6 +1243,7 @@ pre .javascript .function {
   cursor: zoom-in;
   cursor: -webkit-zoom-in;
 }
+.post-body.,
 .post-body .image-caption,
 .post-body .figure .caption {
   margin: -20px auto 15px;
@@ -1564,6 +1565,9 @@ span {
     display: none;
   }
 }
+li {
+  color: #ffdead;
+}
 .post-button {
   margin-top: 40px;
 }
@@ -1850,7 +1854,7 @@ span {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #266aff;
+  background: #a729d9;
 }
 .links-of-blogroll {
   font-size: 13px;
