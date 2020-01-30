@@ -1059,7 +1059,7 @@ pre .javascript .function {
 .back-to-top {
   display: none;
   margin: 20px -10px -20px;
-  background: #fff;
+  background: #222;
   font-size: 12px;
   opacity: 1;
   cursor: pointer;
@@ -1204,7 +1204,7 @@ pre .javascript .function {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-  color: #ffdead;
+  color: #faebae;
 }
 .menu .menu-item a:hover {
   border-bottom-color: #222;
@@ -1224,17 +1224,17 @@ pre .javascript .function {
   }
 }
 .post-body a {
-  color: #f8f5d4;
+  color: #2a7b9b;
   font-weight: bold;
 }
 .category-all-title {
-  color: #f8f5d4;
+  color: #faebae;
 }
 .category-list-count {
-  color: #f8f5d4;
+  color: #faebae;
 }
 .category {
-  color: #ffdead;
+  color: #faebae;
 }
 .post-body .fancybox img {
   display: block !important;
@@ -1357,10 +1357,10 @@ pre .javascript .function {
   }
 }
 .archive-page-counter {
-  color: #ffdead;
+  color: #faebae;
 }
 span {
-  color: #ffdead;
+  color: #faebae;
 }
 .posts-collapse {
   position: relative;
@@ -1416,7 +1416,7 @@ span {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: border;
-  border-bottom: 1px dashed #ffdead;
+  border-bottom: 1px dashed #faebae;
 }
 .posts-collapse .post-header::before {
   content: " ";
@@ -1426,7 +1426,7 @@ span {
   width: 6px;
   height: 6px;
   margin-left: -4px;
-  background: #ffdead;
+  background: #faebae;
   border-radius: 50%;
   border: 1px solid #fff;
   transition-duration: 0.2s;
@@ -1445,7 +1445,7 @@ span {
   font-size: 12px;
   left: 20px;
   top: 5px;
-  color: #ffdead;
+  color: #faebae;
 }
 .posts-collapse .post-comments-count {
   display: none;
@@ -1478,7 +1478,7 @@ span {
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
-  color: #ffdead;
+  color: #faebae;
   border-bottom: none;
   line-height: 1.2;
   vertical-align: top;
@@ -1520,7 +1520,7 @@ span {
   text-align: center;
 }
 .posts-expand .post-meta span {
-  color: #ffdead;
+  color: #fae8eb;
 }
 .posts-expand .post-meta .post-category-list {
   display: inline-block;
@@ -1566,13 +1566,13 @@ span {
   }
 }
 li {
-  color: #ffdead;
+  color: #fae8eb;
 }
 .post-button {
   margin-top: 40px;
 }
 .btn {
-  color: #ffdead;
+  color: #faebae;
 }
 .posts-expand .post-tags {
   margin-top: 40px;
@@ -1693,8 +1693,7 @@ li {
   bottom: 0;
   width: 0;
   z-index: 1040;
-  box-shadow: inset 0 2px 6px #000;
-  background: #222;
+  background: #2a7b9b;
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
@@ -1777,8 +1776,8 @@ li {
   font-weight: normal;
 }
 .back-to-top.back-to-top-on {
-  background: #80466f;
-  color: #ffdead;
+  background: #d0826b;
+  color: #80466f;
 }
 .site-description {
   margin-top: 5px;
@@ -1854,7 +1853,7 @@ li {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f4ffff;
+  background: #34f1c7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2947,9 +2946,9 @@ hr {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 25px;
-  background: rgba(255,255,255,0.2) none repeat scroll !important;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  background: rgba(255,255,255,0.1) none repeat scroll !important;
+  -webkit-box-shadow: 0 0 5px #cacbcb;
+  -moz-box-shadow: 0 0 5px #cacbcc;
 }
 .content {
   border-radius: 10px;
@@ -2957,19 +2956,19 @@ hr {
   background: rgba(255,255,255,0) none repeat scroll !important;
 }
 body {
-  background: url("http://q2augi5wk.bkt.clouddn.com/background.jpg");
+  background: url("http://q4uznycg1.bkt.clouddn.com/woman-in-blue-jacket-holding-pink-fujifilm-instax-camera-881633.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 .footer-inner {
-  color: #ffdead;
+  color: #faebae;
 }
 #sidebar p,
 #sidebar span,
 #sidebar a {
-  color: #ffdead;
+  color: #faebae;
 }
 article p {
-  color: #ffdead;
+  color: #faebae;
 }

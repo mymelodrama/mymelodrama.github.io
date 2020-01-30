@@ -86,11 +86,11 @@
 <meta property="og:site_name" content="仰望星空，低头赶路">
 <meta property="og:description" content="leetcode练习题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2augi5wk.bkt.clouddn.com&#x2F;1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2augi5wk.bkt.clouddn.com&#x2F;2.jpg">
-<meta property="og:updated_time" content="2019-12-12T06:41:27.765Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;q4uznycg1.bkt.clouddn.com&#x2F;1.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;q4uznycg1.bkt.clouddn.com&#x2F;2.jpg">
+<meta property="og:updated_time" content="2020-01-30T15:47:24.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q2augi5wk.bkt.clouddn.com&#x2F;1.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;q4uznycg1.bkt.clouddn.com&#x2F;1.jpg">
 
 
 
@@ -465,13 +465,13 @@
 <p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
 <p>示例 ：</p>
 <p>输入：head = [3,2,0,-4], pos = 1<br>输出：tail connects to node index 1<br>解释：链表中有一个环，其尾部连接到第二个节点。</p>
-<p><img src="http://q2augi5wk.bkt.clouddn.com/1.jpg" alt="1"></p>
+<p><img src="http://q4uznycg1.bkt.clouddn.com/1.jpg" alt="1"></p>
 <p>这题除了哈希表还有一种解法    <strong>Floyd 算法</strong>    很妙 贴出来：</p>
 <p><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/huan-xing-lian-biao-ii-by-leetcode/" target="_blank" rel="noopener">leetcode解答Floyd 解法</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> ListNode <span class="title">getIntersect</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode tortoise = head;</span><br><span class="line">        ListNode hare = head;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// A fast pointer will either loop around a cycle and meet the slow</span></span><br><span class="line">        <span class="comment">// pointer or reach the `null` at the end of a non-cyclic list.</span></span><br><span class="line">        <span class="keyword">while</span> (hare != <span class="keyword">null</span> &amp;&amp; hare.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            tortoise = tortoise.next;</span><br><span class="line">            hare = hare.next.next;</span><br><span class="line">            <span class="keyword">if</span> (tortoise == hare) &#123;</span><br><span class="line">                <span class="keyword">return</span> tortoise;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">detectCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// If there is a cycle, the fast/slow pointers will intersect at some</span></span><br><span class="line">        <span class="comment">// node. Otherwise, there is no cycle, so we cannot find an e***ance to</span></span><br><span class="line">        <span class="comment">// a cycle.</span></span><br><span class="line">        ListNode intersect = getIntersect(head);</span><br><span class="line">        <span class="keyword">if</span> (intersect == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// To find the e***ance to the cycle, we have two pointers traverse at</span></span><br><span class="line">        <span class="comment">// the same speed -- one from the front of the list, and the other from</span></span><br><span class="line">        <span class="comment">// the point of intersection.</span></span><br><span class="line">        ListNode ptr1 = head;</span><br><span class="line">        ListNode ptr2 = intersect;</span><br><span class="line">        <span class="keyword">while</span> (ptr1 != ptr2) &#123;</span><br><span class="line">            ptr1 = ptr1.next;</span><br><span class="line">            ptr2 = ptr2.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ptr1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="相交链表"><a href="#相交链表" class="headerlink" title="相交链表"></a>相交链表</h2><p>说实话这种双指针法太妙~</p>
-<p><img src="http://q2augi5wk.bkt.clouddn.com/2.jpg" alt="2"></p>
+<p><img src="http://q4uznycg1.bkt.clouddn.com/2.jpg" alt="2"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">getIntersectionNode</span><span class="params">(ListNode headA, ListNode headB)</span> </span>&#123;</span><br><span class="line">        ListNode aptr = headA, bptr = headB;</span><br><span class="line">        <span class="keyword">if</span> (aptr == <span class="keyword">null</span> || bptr == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> (aptr != bptr) &#123;</span><br><span class="line">            aptr = aptr == <span class="keyword">null</span> ? headB : aptr.next;</span><br><span class="line">            bptr = bptr == <span class="keyword">null</span> ? headA : bptr.next;</span><br><span class="line">            <span class="comment">//这里太巧妙了！</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> aptr;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="奇偶链表"><a href="#奇偶链表" class="headerlink" title="奇偶链表"></a>奇偶链表</h2><p>给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。请注意，这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。</p>
@@ -520,8 +520,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/mymelodrama.github.io/2019/12/17/20%E5%B2%81%EF%BC%8C%E4%BD%8E%E5%A4%B4%E8%B5%B6%E8%B7%AF/" rel="prev" title="20岁，低头赶路">
-                20岁，低头赶路 <i class="fa fa-chevron-right"></i>
+              <a href="/mymelodrama.github.io/2019/12/17/20%E5%B2%81/" rel="prev" title="20岁">
+                20岁 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -649,7 +649,7 @@
                 
             </div>
           
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1645135&auto=0&height=66"></iframe>
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=481876029&auto=1&height=66"></iframe>
           
           
 
@@ -698,7 +698,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
